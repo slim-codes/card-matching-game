@@ -1,0 +1,27 @@
+<body>
+  <div class="container unsolved" *ngIf="unsolvedPairs.length > 0">
+    <article>
+      <div class="animals">
+        <button class="btn btn-animal" *ngFor="let animal of unsolvedPairs">
+          {{ animal.leftpart }}
+        </button>
+        <!-- <button class="btn btn-animal-name">dog</button>
+        <button class="btn btn-animal-name">frog</button>
+        <button class="btn btn-animal-name">lizard</button>
+        <button class="btn btn-animal-name">parrot</button>
+        <button class="btn btn-animal-name">spider</button>
+        <button class="btn btn-animal-name">shark</button>
+        <button class="btn btn-animal-name">vertebrate</button>
+        <button class="btn btn-animal-name"></button>
+        <button class="btn btn-animal-name"></button>
+        <button class="btn btn-animal-name"></button> -->
+      </div>
+      <div class="animals type">
+        <button class="btn btn-type" *ngFor="let animal of pairs">
+          {{ animal.rightpart }}
+        </button>
+      </div>
+    </article>
+  </div>
+  <ng-content></ng-content>
+</body>
