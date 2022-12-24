@@ -1,0 +1,41 @@
+{
+  "files.exclude": {
+    "*.angular/": true,
+    "**/assets": true,
+    "**/environments/": true,
+    "node_modules/": true,
+    "**/*.js": true,
+    "**/*.spec.ts": true,
+    "*.json": true,
+    "*.gitignore": true,
+    "*.editorconfig": true,
+    "*.browserslistrc": true,
+    "**/.browserlistrc": true,
+    "**/test.ts": true,
+    "**/polyfills.ts": true,
+    "**/main.ts": true,
+    "**/index.html": true,
+    "**/favicon.ico": true,
+    "*.md": true
+  },
+  "typescript.format.insertSpaceAfterTypeAssertion": true,
+  "editor.formatOnPaste": true,
+  "prettier.requireConfig": true,
+  "editor.formatOnSave": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true
+  }
+}
