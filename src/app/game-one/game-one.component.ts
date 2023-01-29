@@ -11,8 +11,30 @@ export class GameOneComponent implements OnInit {
   AnimalsService: AnimalsService;
 
   animals!: Pair[];
-  constructor(AnimalsService: AnimalsService) {
-    this.AnimalsService = AnimalsService;
+
+  // The following IDs are used in correspondence with [ngClass] to manipulate toggle the selected state of a button
+  leftpartSelectedId!: number;
+  rightpartSelectedId!: number;
+  leftpartUnselectedId!: number;
+  rightpartUnselectedId!: number;
+
+  onLeftpartSelected(id: number): void {
+    this.leftpartSelectedId = id;
+  }
+
+  onRightpartSelected(id: number): void {
+    this.rightpartSelectedId = id;
+  }
+
+  onLeftpartUnselected(): void {
+    this.leftpartUnselectedId = -1;
+  }
+
+  onRightpartUnselected(): void {
+    this.rightpartUnselectedId = -1;
+  }
+  constructor(Animals: AnimalsService) {
+    this.AnimalsService = Animals;
   }
 
   ngOnInit(): void {

@@ -1,6 +1,24 @@
-<h1>Test</h1>
+<h1>Tester</h1>
 
-<!-- <li *ngFor="let animal of animals">{{ animal.id }}</li> -->
-<app-matching-game [pairs]="animals">
-  <h1>HHH</h1>
+<app-matching-game
+  [pairs]="animals"
+  (leftpartSelected)="onLeftpartSelected($event)"
+  (rightpartSelected)="onRightpartSelected($event)"
+  (leftpartUnselected)="onLeftpartUnselected()"
+  (rightpartUnselected)="onRightpartUnselected()"
+>
+  <ng-template #leftpart let-animalPair="contextPair">
+    <button
+      [class.selected]="leftpartSelectedId == animalPair.id"
+      class="btn btn-animal"
+    >
+      {{ animalPair.leftpart }}
+    </button>
+  </ng-template>
+
+  <ng-template #rightpart let-animalPair="contextPair">
+    <button [class.selected]="rightpartSelectedId == animalPair.id" class="btn">
+      {{ animalPair.rightpart }}
+    </button>
+  </ng-template>
 </app-matching-game>

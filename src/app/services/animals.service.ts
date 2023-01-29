@@ -16,19 +16,17 @@ export class AnimalsService {
     {
       id: 8,
       leftpart: 'warm-blooded',
-      rightpart:
-        'able to regulate their temperature with respect to the environment',
+      rightpart: `able to regulate their temperature with respect to the environment`,
     },
     {
       id: 9,
       leftpart: 'cold-blooded',
-      rightpart: 'unable to regulate their internal heat',
+      rightpart: `unable to regulate their internal heat`,
     },
     {
       id: 10,
       leftpart: '6 types of animals',
-      rightpart:
-        'amphibians, reptiles, mammals, birds, fish, invertebrates/insects',
+      rightpart: `amphibians, reptiles, mammals, birds, fish, invertebrates/insects`,
     },
   ];
 

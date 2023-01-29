@@ -1,27 +1,37 @@
 <body>
   <div class="container unsolved" *ngIf="unsolvedPairs.length > 0">
     <article>
-      <div class="animals">
-        <button class="btn btn-animal" *ngFor="let animal of unsolvedPairs">
-          {{ animal.leftpart }}
-        </button>
-        <!-- <button class="btn btn-animal-name">dog</button>
-        <button class="btn btn-animal-name">frog</button>
-        <button class="btn btn-animal-name">lizard</button>
-        <button class="btn btn-animal-name">parrot</button>
-        <button class="btn btn-animal-name">spider</button>
-        <button class="btn btn-animal-name">shark</button>
-        <button class="btn btn-animal-name">vertebrate</button>
-        <button class="btn btn-animal-name"></button>
-        <button class="btn btn-animal-name"></button>
-        <button class="btn btn-animal-name"></button> -->
+      <div class="animal left">
+        <div
+          class="item"
+          *ngFor="let pair of unsolvedPairs; trackBy: trackItemsById"
+          (mousedown)="
+            leftpartSelected.emit(pair.id); leftpartUnselected.emit()
+          "
+          (click)="assignmentStream.next({ pair: pair, side: 'left' })"
+        >
+          <ng-template
+            [ngTemplateOutlet]="leftpart_temp"
+            [ngTemplateOutletContext]="{ contextPair: pair }"
+          ></ng-template>
+        </div>
       </div>
-      <div class="animals type">
-        <button class="btn btn-type" *ngFor="let animal of pairs">
-          {{ animal.rightpart }}
-        </button>
+      <div class="animal right">
+        <div
+          class="item"
+          *ngFor="let pair of unsolvedPairs; trackBy: trackItemsById"
+          (mousedown)="
+            rightpartSelected.emit(pair.id); rightpartUnselected.emit()
+          "
+          (click)="assignmentStream.next({ pair: pair, side: 'right' })"
+        >
+          <ng-template
+            [ngTemplateOutlet]="rightpart_temp"
+            [ngTemplateOutletContext]="{ contextPair: pair }"
+          >
+          </ng-template>
+        </div>
       </div>
     </article>
   </div>
-  <ng-content></ng-content>
 </body>
