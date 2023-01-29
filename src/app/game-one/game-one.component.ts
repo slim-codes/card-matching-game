@@ -27,11 +27,11 @@ export class GameOneComponent implements OnInit {
   }
 
   onLeftpartUnselected(): void {
-    this.leftpartUnselectedId = -1;
+    this.leftpartSelectedId = -1;
   }
 
   onRightpartUnselected(): void {
-    this.rightpartUnselectedId = -1;
+    this.rightpartSelectedId = -1;
   }
   constructor(Animals: AnimalsService) {
     this.AnimalsService = Animals;

@@ -5,9 +5,7 @@
         <div
           class="item"
           *ngFor="let pair of unsolvedPairs; trackBy: trackItemsById"
-          (mousedown)="
-            leftpartSelected.emit(pair.id); leftpartUnselected.emit()
-          "
+          (mousedown)="leftpartSelected.emit(pair.id)"
           (click)="assignmentStream.next({ pair: pair, side: 'left' })"
         >
           <ng-template
@@ -20,9 +18,7 @@
         <div
           class="item"
           *ngFor="let pair of unsolvedPairs; trackBy: trackItemsById"
-          (mousedown)="
-            rightpartSelected.emit(pair.id); rightpartUnselected.emit()
-          "
+          (mousedown)="rightpartSelected.emit(pair.id)"
           (click)="assignmentStream.next({ pair: pair, side: 'right' })"
         >
           <ng-template
@@ -33,5 +29,17 @@
         </div>
       </div>
     </article>
+  </div>
+  <div class="container solved" *ngIf="solvedPairs.length > 0">
+    <div class="pair" *ngFor="let pair of solvedPairs; trackBy: trackItemsById">
+      <button *ngIf="pair.rightpart != 'fish'">
+        {{ pair.leftpart }}s are {{ pair.rightpart }}s
+      </button>
+      <button *ngIf="pair.rightpart === 'fish'">
+        {{ pair.leftpart }}s are {{ pair.rightpart }}es
+      </button>
+
+      <!-- <button>{{ pair.rightpart }}'s are {{ pair.rightpart }}'s</button> -->
+    </div>
   </div>
 </body>
